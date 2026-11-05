@@ -1,6 +1,6 @@
 # 进度与断点恢复记录
 
-更新：2026-11-05（Asia/Shanghai）。**文献整理、质量检查及本地提交已完成；GitHub推送因缺少可用认证凭据而未完成。最终范围为五篇全文精读，04已取消。**
+更新：2026-11-05（Asia/Shanghai）。**文献整理、质量检查、本地提交及GitHub推送均已完成。最终范围为五篇全文精读，04已取消。**
 
 ## 仓库与范围
 
@@ -36,12 +36,17 @@
 
 01–03公开全文在各目录paper.pdf；05–06完整全文在各目录private/paper.pdf（忽略Git）。仓库外当前工作区work下保留全文提取、关键页面渲染及公式检查工具，不提交。后续修订直接利用已有文件，不重复下载或将未公开全文加入Git。
 
-## GitHub推送阻碍与具体恢复步骤
+## GitHub上传确认
 
-2026-11-05普通push尝试失败，Git报告无法在禁用交互时取得密码。未发生远程分支更新，不是自动审批拒绝，也未绕过认证。当前没有可用GitHub凭据；需在用户机器完成GitHub登录/凭据配置后执行普通命令：
+2026-11-05，用户完成GitHub登录后恢复推送。直连发生网络重置/超时；检测到Windows已启用本机代理，改用单次命令参数 `http.proxy=http://127.0.0.1:7890` 后普通push成功，未修改全局Git配置。
 
-```text
-git push -u origin literature/two-stage-traction-control
-```
+- 文献内容提交：`fe3fffd871eb51c6f1c25053751fbaa8bce45b88`。
+- 远程分支：`literature/two-stage-traction-control`。
+- 已通过 `git ls-remote` 确认远程分支包含上述相同提交。
+- 分支跟踪关系已设置；没有合并main或强制推送。
+- 本次进度状态更新作为独立后续提交保存，保留已上传文献提交历史。
+- 05、06的版权PDF仍仅在本地private目录，未进入Git历史或交付压缩包。
 
-恢复前先检查HEAD及远程分支；若远程新增提交，保留其内容并处理分歧，不强推。正文分析无需重做，受版权PDF继续保留本地。
+[GitHub阅读入口](https://github.com/1DoctorZ/AI-HYF-Study/tree/literature/two-stage-traction-control/Literature/Two-Stage-Traction-Control)
+
+当前无待完成上传或文献分析事项。后续严格复现的原文疑点继续以QUALITY_CHECK.md为准。
