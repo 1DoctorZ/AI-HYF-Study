@@ -1,0 +1,4 @@
+# 本地待核验文件不得进入版本控制
+**/*.local.pdf
+**/paper.pending.pdf
+**/private/
